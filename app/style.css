@@ -1,0 +1,70 @@
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#app {
+  width: 100%
+}
+
+#moviesList > li {
+  list-style-type: none;
+}
+
+#moviesCountersContainer {
+  margin: 0px 25px 0 0;
+  float: right;
+}
+
+#moviesCountersContainer span {
+  margin: 0 0 0 20px;
+  font-weight: bold;
+}
+
+#moviesListContainer {
+  margin-top: 100px !important;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#moviesList > li {
+  border: solid 2px #ccc;
+  margin: 0 0 10px 0;
+  padding: 15px 15px 15px 15px;
+}
+
+#moviesList > li:hover {
+  border-color: #aaa;
+}
+
+.container-div {
+  margin: 10px 0 0 0;
+}
+
+.seen {
+  width: 32px;
+  height: 32px;
+  background-image: url('./img/seen.png');
+  background-color: #FFF;
+  border: none;
+}
+
+.not-seen {
+  width: 32px;
+  height: 32px;
+  background-image: url('./img/not-seen.png');
+  background-color: #FFF;
+  border: none;
+}
