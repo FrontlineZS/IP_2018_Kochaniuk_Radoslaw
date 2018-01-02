@@ -15,28 +15,28 @@ button:hover {
   cursor: pointer;
 }
 
-#app {
-  width: 100%
-}
-
 #moviesList > li {
   list-style-type: none;
 }
 
 #moviesCountersContainer {
-  margin: 0px 25px 0 0;
-  float: right;
+  text-align: right;
 }
 
 #moviesCountersContainer span {
-  margin: 0 0 0 20px;
+  margin: 0 25px 0 0;
   font-weight: bold;
 }
 
 #moviesListContainer {
-  margin-top: 100px !important;
-  width: 75%;
-  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 #moviesList > li {

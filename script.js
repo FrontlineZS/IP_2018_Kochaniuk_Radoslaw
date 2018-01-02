@@ -23,7 +23,7 @@ function generateNewListElement(item) {
   containerDiv.setAttribute('class', 'container-div')
 
   var titleAndYear = document.createElement('div');
-  titleAndYear.textContent = item.title + ' ' + '( ' + item.year + ' )';
+  titleAndYear.textContent = item.title + ' ' + `${item.year}`;
 
   var genre = document.createElement('span');
   genre.textContent = item.genre;
@@ -36,7 +36,8 @@ function generateNewListElement(item) {
   isSeen.setAttribute('style', 'margin: 0 20px 0 0;');
 
   var seen = document.createElement('button');
-  seen.setAttribute('onclick', 'handleIconChange('+ item.id +')');
+  seen.setAttribute('id', `button-${item.id}`);
+  seen.setAttribute('onclick', `handleIconChange(${item.id})`);
 
   if (item.seen === 'T') {
     seen.setAttribute('class', 'seen');
@@ -54,22 +55,20 @@ function generateNewListElement(item) {
   document.getElementById('moviesList').appendChild(li);
 }
 
-function handleIconChange(item) {
-  for (var i = 0; i < moviesData.length; i++) {
-    if (moviesData[i].id === item) {
-      break;
-    }
+function handleIconChange(itemId) {
+
+  function findOneById(movie) {
+    return movie
+      .filter(function(obj) {
+        return obj.id === itemId;
+      });
   }
 
-  let button = document.getElementsByTagName('button')[i];
+  let filteredMovie = findOneById(moviesData);
+  let button = document.getElementById(`button-${filteredMovie[0].id}`);
 
-  if (moviesData[i].seen === 'T') {
-    moviesData[i].seen = 'F';
-    button.setAttribute('class', 'not-seen');
-  } else {
-    moviesData[i].seen = 'T';
-    button.setAttribute('class', 'seen');
-  }
+  (filteredMovie[0].seen === 'T') ? (button.setAttribute('class', 'not-seen')) : (button.setAttribute('class', 'seen'));
+  (filteredMovie[0].seen === 'T') ? (filteredMovie[0].seen = 'F') : (filteredMovie[0].seen = 'T');
 
   moviesCounter(moviesData);
 }
