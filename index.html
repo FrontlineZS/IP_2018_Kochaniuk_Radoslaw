@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Movies list</title>
 
   <link rel="stylesheet" href="./style.css">
+
+
 </head>
 <body>
   <div id="moviesCountersContainer">
@@ -14,11 +16,16 @@
       <p>Viewed: <span class="moviesCounter" id="moviesCounterSeen"></span></p>
   </div>
   <div id="moviesListContainer">
+    <a href="#" id='add-new-movie' class="link-button">Add new movie</a>
     <ul id="moviesList"></ul>
   </div>
 
-  <script type="text/javascript" src="./data.js"></script>
-  <script type="text/javascript" src="./script.js"></script>
+  <script type="module" src="./index.js"></script>
 
+  <script type="text/javascript">
+    document.getElementById("add-new-movie").onclick = function() {
+      window.location.href = "http://localhost:8080/add.html";
+    };
+  </script>
 </body>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add the new one</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./form-style.css">
+</head>
+<body>
+  <div id="moviesCountersContainer">
+    <p>All: <span class="moviesCounter" id="anotherMoviesCounterAll"></span></p>
+    <p>Viewed: <span class="moviesCounter" id="anotherMoviesCounterSeen"></span></p>
+  </div>
+  <div id="formContainer">
+    <form id="add-new-movie-form" action="" method="post" name="add-new-movie-form" novalidate>
+      <ul>
+        <li>
+          <h2>Add New Movie</h2>
+          <span class="required-notification">* Denotes Required Field</span>
+        </li>
+        <li>
+          <label for="title">Title:</label>
+          <input type="text" name="title" required />
+        </li>
+        <li>
+          <label for="year">Year:</label>
+          <input type="text" name="year" required pattern="^\d{4}$"/>
+        </li>
+        <li>
+          <label for="genre">Genre:</label>
+          <select id="genre" name="genre" required >
+            <option value=""></option>
+            <option value="action">Action</option>
+            <option value="adventure">Adventure</option>
+            <option value="comedy">Comedy</option>
+            <option value="crime">Crime</option>
+            <option value="drama">Drama</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="horror">Horror</option>
+            <option value="fiction">Science fiction</option>
+            <option value="thiller">Thiller</option>
+            <option value="western">Western</option>
+          </select>
+        </li>
+        <li>
+          <label for="summary">Summary:</label>
+          <textarea name="summary"></textarea>
+        </li>
+        <li>
+          <button type="submit" name="submit">Add the new one</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+</body>
+</html>
