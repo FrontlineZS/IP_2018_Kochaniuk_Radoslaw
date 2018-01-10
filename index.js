@@ -1,8 +1,7 @@
 import setCounterOfTo from './movies-counter.js';
 import MoviesStorage from './movies-storage.js';
 
-var moviesData = JSON.parse(localStorage.getItem("movies"));
-var moviesStorage = new MoviesStorage(moviesData);
+var moviesStorage = new MoviesStorage();
 
 // console.log(moviesStorage.get());
 
@@ -99,5 +98,5 @@ function handleIconChange(itemId) {
   (filteredMovie.seen === 'T') ? (button.setAttribute('class', 'not-seen')) : (button.setAttribute('class', 'seen'));
   (filteredMovie.seen === 'T') ? (filteredMovie.seen = 'F') : (filteredMovie.seen = 'T');
 
-  moviesCounter(moviesData);
+  moviesCounter(moviesStorage.movies);
 }
