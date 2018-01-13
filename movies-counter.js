@@ -4,11 +4,9 @@ export default function setCounterOfTo(elementId, value) {
     return;
   }
 
-  let handler = document.getElementById(`${elementId}`);
-
-  if (! handler) {
+  if (! elementId) {
     return;
   }
 
-  handler.innerHTML = value;
+  elementId.innerHTML = value;
 }

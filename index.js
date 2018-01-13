@@ -8,22 +8,22 @@ var moviesStorage = new MoviesStorage();
 // console.log(moviesStorage.get(3));
 
 // moviesStorage.set({
-//           "id": 4,
-//           "title": "ADDED BY SET METHOD",
-//           "year": 2018,
-//           "genre": "drama",
-//           "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-//           "seen": "T"
-//       });
+//   "id": 4,
+//   "title": "ADDED BY SET METHOD",
+//   "year": 2018,
+//   "genre": "drama",
+//   "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+//   "seen": "T"
+// });
 
 // moviesStorage.set(1, {
-//           "id": 4,
-//           "title": "ADDED BY SET METHOD",
-//           "year": 2018,
-//           "genre": "drama",
-//           "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-//           "seen": "T"
-//       });
+//   "id": 4,
+//   "title": "ADDED BY SET METHOD",
+//   "year": 2018,
+//   "genre": "drama",
+//   "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+//   "seen": "T"
+// });
 
 moviesCounter(moviesStorage.movies);
 moviesStorage.movies.forEach(generateNewListElement);
@@ -32,16 +32,16 @@ function moviesCounter(moviesStorage) {
   let all = moviesStorage.length;
   let viewed = 0;
 
-  function moviesCounterSeen(item) {
+  function countSeenMovies(item) {
     if (item.seen === 'T') {
       viewed++;
     }
   }
 
-  moviesStorage.forEach(moviesCounterSeen);
+  moviesStorage.forEach(countSeenMovies);
 
-  setCounterOfTo('moviesCounterAll', all);
-  setCounterOfTo('moviesCounterSeen', viewed);
+  setCounterOfTo(moviesCounterAll, all);
+  setCounterOfTo(moviesCounterSeen, viewed);
 }
 
 function generateNewListElement(item) {
@@ -69,7 +69,7 @@ function generateNewListElement(item) {
   seen.setAttribute('id', `button-${item.id}`);
   seen.addEventListener('click', function() {
     handleIconChange(item.id)
-  });
+  }, false);
 
   if (item.seen === 'T') {
     seen.setAttribute('class', 'seen');

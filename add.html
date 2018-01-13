@@ -15,7 +15,7 @@
     <p>Viewed: <span class="moviesCounter" id="anotherMoviesCounterSeen"></span></p>
   </div>
   <div id="formContainer">
-    <form id="add-new-movie-form" action="" method="post" name="add-new-movie-form" novalidate>
+    <form id="add-new-movie-form" action="#" method="post" name="add-new-movie-form" onsubmit="return validateForm()" novalidate>
       <ul>
         <li>
           <h2>Add New Movie</h2>
@@ -23,11 +23,11 @@
         </li>
         <li>
           <label for="title">Title:</label>
-          <input type="text" name="title" required />
+          <input id="title" type="text" name="title" required />
         </li>
         <li>
           <label for="year">Year:</label>
-          <input type="text" name="year" required pattern="^\d{4}$"/>
+          <input id="year" type="text" name="year" required pattern="^\d{4}$"/>
         </li>
         <li>
           <label for="genre">Genre:</label>
@@ -51,10 +51,26 @@
         </li>
         <li>
           <button type="submit" name="submit">Add the new one</button>
+          <button type="button" id="redirect-to-movie-list">Back to movies list</button>
         </li>
       </ul>
+      <div class="alert alert-success" id="success">
+        <strong>Success !</strong><span>The movie has been correctly added to list</span>
+      </div>
+      <div class="alert alert-danger" id="failure">
+        <strong>Failure !</strong><span>The movie has not been correctly added to list. Please check all fields have been filled out</span>
+      </div>
     </form>
   </div>
+
+  <script type="module" src="./add.js"></script>
+
+  <script type="text/javascript">
+    document.getElementById("redirect-to-movie-list").onclick = function() {
+      window.location.href = "http://localhost:8080/index.html";
+    };
+  </script>
+
 
 </body>
 </html>

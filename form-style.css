@@ -42,6 +42,10 @@
   border-bottom: 1px solid #777;
 }
 
+#add-new-movie-form li:last-child {
+  margin-bottom: 20px;
+}
+
 #add-new-movie-form label {
   width: 150px;
   margin-top: 3px;
@@ -134,4 +138,29 @@ select:required {
   background: #fff url(img/_valid.png) no-repeat 98% center;
   box-shadow: 0 0 5px #5cd053;
   border-color: #28921f;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert > span {
+  margin-left: 20px;
+}
+
+.alert-success {
+  display: none;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-danger {
+  display: none;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
 }

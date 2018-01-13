@@ -61,7 +61,7 @@ export default class MoviesStorage {
       ]
       localStorage.setItem('movies', JSON.stringify(moviesData));
 
-      console.log(`Setting item called 'movie' at localStorage.`);
+      console.log(`Setting item called 'movies' at localStorage.`);
     } else {
       var moviesData = JSON.parse(localStorage.getItem("movies"));
     }
