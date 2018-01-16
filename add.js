@@ -23,6 +23,9 @@ form.onsubmit = function(event) {
       "seen": "F"
     });
 
+    localStorage.setItem('movies', JSON.stringify(moviesStorage.movies));
+    moviesCounter(moviesStorage.movies);
+
     showAlert(success);
     form.reset();
 
